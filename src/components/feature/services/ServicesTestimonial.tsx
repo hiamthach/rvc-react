@@ -2,12 +2,21 @@ import { Testimonial } from '@/config/types/Testimonial';
 
 import { Carousel } from '@mantine/carousel';
 
+import useWindowDimensions from '@/hooks/useWindowDimensions';
+
 const ServicesTestimonial = ({ testimonials }: { testimonials: Testimonial[] }) => {
+  const dimension = useWindowDimensions();
+
   return (
     <div className="py-12">
       <h3 className="home-section-hero text-center text-primary uppercase font-bold">Cảm nhận của khách hàng</h3>
 
-      <Carousel slideGap={'50px'} slideSize={'33.33333%'} loop>
+      <Carousel
+        slideGap={dimension?.width && dimension.width > 768 ? '50px' : '16px'}
+        slideSize={dimension?.width && dimension.width > 768 ? '33.33333%' : '100%'}
+        align={'center'}
+        loop
+      >
         {testimonials.map((testimonial, index) => (
           <Carousel.Slide key={index}>
             <div className="text-center mx-12">

@@ -8,7 +8,7 @@ const HomeServices = ({ content }: { content: Content }) => {
   }
 
   return (
-    <section className="my-8">
+    <section className="mt-12 mb-16">
       <div className="container mb-7">
         <h3 className="home-section-hero text-primary">Sản phẩm & dịch vụ</h3>
       </div>
@@ -23,7 +23,7 @@ const HomeServices = ({ content }: { content: Content }) => {
         <div className="overlay"></div>
         <div className="container relative text-white z-20">
           <h4 className="home-section-hero mb-4">{content.title}</h4>
-          <p className="text-base mb-8">{content.description}</p>
+          <p className="text-sm md:text-base mb-8 line-clamp-[10]">{content.description}</p>
 
           <div className="w-full text-center">
             <Button size="lg">Tìm hiểu thêm</Button>

@@ -25,10 +25,10 @@ const Footer = ({ information }: { information: Information }) => {
   return (
     <footer className="w-full bg-primary">
       <div className="container py-10">
-        <div className="flex flex-row justify-between items-stretch">
-          <div className="flex flex-col gap-2 w-fit h-full">
+        <div className="flex flex-col md:flex-row gap-4 flex-wrap md:flex-nowrap justify-between items-center md:items-stretch mb-3">
+          <div className="flex flex-col items-center md:items-start gap-2 w-fit h-full">
             <div className="mb-3">
-              <Logo width={200} height={48} />
+              <Logo width={240} height={56} />
             </div>
 
             <div className="flex gap-2 text-white">
@@ -49,15 +49,15 @@ const Footer = ({ information }: { information: Information }) => {
             </div>
           </div>
 
-          <div className="flex flex-col items-end justify-between">
-            <div className="flex gap-10 justify-end">
-              <div className="flex flex-col gap-2 w-fit">
-                <Link to={'/'} className="uppercase text-base text-white no-underline">
+          <div className="flex flex-col items-center sm:items-end justify-between">
+            <div className="flex flex-col sm:flex-row gap-4 md:gap-10 justify-end mb-2">
+              <div className="flex flex-col items-center w-full sm:items-start gap-2 sm:w-fit">
+                <Link to={'/'} className="uppercase text-base text-white no-underline font-medium">
                   Trang chủ
                 </Link>
               </div>
-              <div className="flex flex-col gap-2 w-fit">
-                <Link to={'/about-us'} className="uppercase text-base text-white no-underline">
+              <div className="flex flex-col items-center w-full sm:items-start gap-2 sm:w-fit">
+                <Link to={'/about-us'} className="uppercase text-base text-white no-underline font-medium">
                   Về chúng tôi
                 </Link>
 
@@ -71,8 +71,8 @@ const Footer = ({ information }: { information: Information }) => {
                   Câu chuyện đầu tư
                 </Link>
               </div>
-              <div className="flex flex-col gap-2 w-fit">
-                <Link to={'/services/list'} className="uppercase text-base text-white no-underline">
+              <div className="flex flex-col items-center w-full sm:items-start gap-2 sm:w-fit">
+                <Link to={'/services/list'} className="uppercase text-base text-white no-underline font-medium">
                   Sản phẩm
                 </Link>
                 <Link to={'/services/list'} className="text-sm text-white no-underline">
@@ -85,19 +85,19 @@ const Footer = ({ information }: { information: Information }) => {
                   Ủy thác đầu tư
                 </Link>
               </div>
-              <div className="flex flex-col gap-2 w-fit">
-                <Link to={'/blog'} className="uppercase text-base text-white no-underline">
+              <div className="flex flex-col items-center w-full sm:items-start gap-2 sm:w-fit">
+                <Link to={'/blog'} className="uppercase text-base text-white no-underline font-medium">
                   Blog
                 </Link>
               </div>
-              <div className="flex flex-col gap-2 w-fit">
-                <Link to={'/contact'} className="uppercase text-base text-white no-underline">
+              <div className="flex flex-col items-center w-full sm:items-start gap-2 sm:w-fit">
+                <Link to={'/contact'} className="uppercase text-base text-white no-underline font-medium">
                   Liên hệ
                 </Link>
               </div>
             </div>
 
-            <div className="flex gap-4 justify-end items-center mt-auto">
+            <div className="flex gap-4 justify-center md:justify-end items-center mt-auto w-full">
               <Link
                 to={facebook ? facebook : '/'}
                 target="_blank"

@@ -4,7 +4,7 @@ import { Carousel } from '@mantine/carousel';
 
 const PartnerItem = ({ data }: { data: Partner }) => {
   return (
-    <div className="aspect-square w-fit h-fit p-4 shadow-xl bg-white">
+    <div className="aspect-square w-fit h-fit p-4 bg-transparent">
       <img src={data.logo} width={400} height={400} alt={data.name} className="object-contain object-center" />
     </div>
   );
@@ -18,7 +18,7 @@ const HomePartner = ({ partners }: { partners: Partner[] }) => {
       <div className="container">
         <Carousel slideGap={'50px'} slideSize={'33.33333%'} loop>
           {partners.map((partner, index) => (
-            <Carousel.Slide key={index}>
+            <Carousel.Slide key={index} className="bg-transparent">
               <PartnerItem data={partner} />
             </Carousel.Slide>
           ))}

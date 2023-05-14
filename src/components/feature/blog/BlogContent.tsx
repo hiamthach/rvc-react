@@ -7,7 +7,7 @@ import { Pagination } from '@mantine/core';
 const BlogContent = ({ blogs }: { blogs: Blog[] }) => {
   return (
     <div className="mt-10">
-      <div className="grid grid-cols-3 gap-6 mb-10">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
         {blogs && blogs.map((blog) => <BlogCard key={blog.id} data={blog} />)}
       </div>
 

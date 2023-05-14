@@ -18,7 +18,7 @@ const ContactForm = ({ information }: { information: Information }) => {
 
   return (
     <div className="container py-10">
-      <div className="flex w-full gap-5">
+      <div className="flex flex-col md:flex-row w-full gap-5">
         <div className="flex-1">
           <h3 className="home-section-hero uppercase">Liên hệ</h3>
           <div className="bg-primary h-[10px] w-[100px] rounded-lg"></div>

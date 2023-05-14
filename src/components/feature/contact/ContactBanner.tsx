@@ -8,7 +8,7 @@ const ContactBanner = () => {
       />
       <div className="overlay"></div>
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-20">
-        <h1 className="text-4xl font-bold text-white">WE’D LOVE TO HEAR FROM YOU</h1>
+        <h1 className="text-2xl md:text-4xl font-bold text-white">WE’D LOVE TO HEAR FROM YOU</h1>
       </div>
     </div>
   );

@@ -13,12 +13,12 @@ interface Props {
 const ServicesQuote = ({ title, quote, description, img, link }: Props) => {
   return (
     <div className="w-full bg-grey py-12">
-      <div className="container flex gap-5">
-        <div className="flex-1 py-4 ">
-          <h3 className="home-section-title font-bold uppercase text-primary text-4xl">{title}</h3>
-          <h4 className="text-3xl uppercase font-semibold mb-10">&quot;{quote}&quot;</h4>
+      <div className="container flex flex-col md:flex-row gap-5 items-center">
+        <div className="flex-1 py-4">
+          <h3 className="home-section-title font-bold uppercase text-primary text-2xl md:text-4xl">{title}</h3>
+          <h4 className="text-xl md:text-3xl uppercase font-semibold mb-4 md:mb-10">&quot;{quote}&quot;</h4>
 
-          <p className="text-base">{description}</p>
+          <p className="text-sm md:text-base">{description}</p>
         </div>
 
         <div className="w-fit">
