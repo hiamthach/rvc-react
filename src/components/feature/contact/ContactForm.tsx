@@ -3,18 +3,18 @@ import { IconMail, IconMapPin, IconPhoneCall, IconPointer } from '@tabler/icons-
 import { Information } from '@/config/types/Information';
 
 import { Button, TextInput, Textarea } from '@mantine/core';
-import { useForm } from '@mantine/form';
+// import { useForm } from '@mantine/form';
 
 const ContactForm = ({ information }: { information: Information }) => {
-  const form = useForm({
-    initialValues: {
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      feedback: '',
-    },
-  });
+  // const form = useForm({
+  //   initialValues: {
+  //     firstName: '',
+  //     lastName: '',
+  //     email: '',
+  //     phone: '',
+  //     feedback: '',
+  //   },
+  // });
 
   return (
     <div className="container py-10">
