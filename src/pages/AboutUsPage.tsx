@@ -3,8 +3,11 @@ import { useQuery } from '@tanstack/react-query';
 
 import AboutUsContent from '@/components/feature/about-us/AboutUsContent';
 import Loading from '@/components/shared/Loading';
+import useDocumentTitle from '@/hooks/useDocumentTitle';
 
 const AboutUs = () => {
+  useDocumentTitle('Về chúng tôi');
+
   const { data, isLoading } = useQuery(
     ['about-us'],
     async () => {

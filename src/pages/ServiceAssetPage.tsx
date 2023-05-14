@@ -5,7 +5,11 @@ import ServicesInformation from '@/components/feature/services/ServicesInformati
 import { getServices } from '@/config/firebase/api/services';
 import Loading from '@/components/shared/Loading';
 
+import useDocumentTitle from '@/hooks/useDocumentTitle';
+
 const ServiceAsset = () => {
+  useDocumentTitle('Quản lý tài sản | Sản phẩm');
+
   const { data: contents, isLoading } = useQuery(
     ['services-asset'],
     async () => {

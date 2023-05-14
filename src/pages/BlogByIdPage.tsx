@@ -6,6 +6,7 @@ import BlogLayout from '@/components/layout/BlogLayout';
 import Loading from '@/components/shared/Loading';
 import BlogDetail from '@/components/feature/blog/BlogDetail';
 import { getBlogById } from '@/config/firebase/api/blogs';
+import useDocumentTitle from '@/hooks/useDocumentTitle';
 
 const BlogByIdPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -22,6 +23,8 @@ const BlogByIdPage = () => {
       refetchOnWindowFocus: false,
     }
   );
+
+  useDocumentTitle(data?.title + ' | Blog' || 'Blog');
 
   if (isLoading || !data) {
     return (

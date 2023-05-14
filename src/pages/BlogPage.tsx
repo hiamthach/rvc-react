@@ -4,8 +4,10 @@ import { useQuery } from '@tanstack/react-query';
 import Loading from '@/components/shared/Loading';
 import BlogContent from '@/components/feature/blog/BlogContent';
 import BlogLayout from '@/components/layout/BlogLayout';
+import useDocumentTitle from '@/hooks/useDocumentTitle';
 
 const BlogPage = () => {
+  useDocumentTitle('Blog');
   const { data, isLoading } = useQuery(['blogs'], () => {
     return getBlogs();
   });

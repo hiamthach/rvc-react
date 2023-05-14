@@ -1,4 +1,8 @@
+import useDocumentTitle from '@/hooks/useDocumentTitle';
+
 const ComingSoon = () => {
+  useDocumentTitle('Coming Soon');
+
   return (
     <div className="h-screen w-full relative">
       <img

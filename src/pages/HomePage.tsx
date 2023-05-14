@@ -12,8 +12,11 @@ import { Slide } from '@/config/types/Slide';
 import { getHomeContent } from '@/config/firebase/api/home';
 import { getSlides } from '@/config/firebase/api/slides';
 import { getPartners } from '@/config/firebase/api/partners';
+import { useDocumentTitle } from '@mantine/hooks';
 
 const HomePage = () => {
+  useDocumentTitle('Trang chủ');
+
   const { data: contents, isLoading: isContentsLoading } = useQuery(
     ['home', 'contents'],
     async () => {

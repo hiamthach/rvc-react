@@ -3,8 +3,10 @@ import { useQuery } from '@tanstack/react-query';
 import ServicesQuote from '@/components/feature/services/ServicesQuote';
 import { getServices } from '@/config/firebase/api/services';
 import Loading from '@/components/shared/Loading';
+import useDocumentTitle from '@/hooks/useDocumentTitle';
 
 const ServiceList = () => {
+  useDocumentTitle('Danh mục sản phẩm | Sản phẩm');
   const { data: contents, isLoading } = useQuery(
     ['services-list'],
     async () => {

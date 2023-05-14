@@ -4,8 +4,11 @@ import ServicesQuote from '@/components/feature/services/ServicesQuote';
 import ServicesInformation from '@/components/feature/services/ServicesInformation';
 import { getServices } from '@/config/firebase/api/services';
 import Loading from '@/components/shared/Loading';
+import useDocumentTitle from '@/hooks/useDocumentTitle';
 
 const ServiceInvestment = () => {
+  useDocumentTitle('Ủy thác đầu tư | Sản phẩm');
+
   const { data: contents, isLoading } = useQuery(
     ['services-investment'],
     async () => {
