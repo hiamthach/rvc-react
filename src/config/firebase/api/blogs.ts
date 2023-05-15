@@ -2,7 +2,7 @@ import { GCS_PATH } from '@/config/constants/general';
 import { db } from '@/config/firebase';
 import { Blog } from '@/config/types/Blog';
 
-import { collection, doc, getDoc, getDocs, orderBy, query } from 'firebase/firestore';
+import { collection, doc, getDoc, getDocs, orderBy, query, where } from 'firebase/firestore';
 
 export const getBlogs = async (): Promise<Blog[]> => {
   try {
@@ -19,7 +19,7 @@ export const getBlogs = async (): Promise<Blog[]> => {
         date: data.date.toDate(),
         id: doc.id,
       } as Blog;
-    });
+    }).filter((blog) => blog.published);
 
     return blogs;
   } catch (error) {
