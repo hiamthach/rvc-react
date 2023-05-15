@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { MantineProvider } from '@mantine/core';
+import { Notifications } from '@mantine/notifications';
 
 const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -36,6 +37,7 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
       withGlobalStyles
       withNormalizeCSS
     >
+      <Notifications />
       {children}
     </MantineProvider>
   );
