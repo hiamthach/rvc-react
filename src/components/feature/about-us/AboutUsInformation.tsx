@@ -17,7 +17,7 @@ const AboutUsInformation = ({ content }: { content: Content }) => {
       </p>
 
       <div className="flex flex-col md:flex-row gap-4 md:gap-10 items-center">
-        <div className="w-2/5 h-auto">
+        <div className="w-full md:w-2/5 h-auto">
           {content.image && (
             <img src={content.image} alt="" className="w-full h-auto object-contain object-center" />
           )}

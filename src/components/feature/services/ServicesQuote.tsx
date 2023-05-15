@@ -23,8 +23,8 @@ const ServicesQuote = ({ title, quote, description, img, link }: Props) => {
           <p className="text-sm md:text-base">{description}</p>
         </div>
 
-        <div className="w-fit">
-          <img src={img} alt={title} width={560} height={400} className="object-contain object-center" />
+        <div className="w-fit max-w-full md:max-w-[50%]">
+          <img src={img} alt={title} width={560} height={400} className="max-w-full object-cover md:object-contain object-center" />
 
           <Link to={link} className="block mt-4 text-center">
             <Button size="lg" component='a' href={link} target='_blank' className={clsx(!link && "pointer-events-none" )} >Tìm hiểu thêm</Button>
