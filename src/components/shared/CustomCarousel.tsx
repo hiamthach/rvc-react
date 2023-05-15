@@ -1,8 +1,37 @@
 import { Slide } from '@/config/types/Slide';
 
 import { Carousel } from '@mantine/carousel';
-import { Button } from '@mantine/core';
+import { Button, createStyles, getStylesRef } from '@mantine/core';
 import clsx from 'clsx';
+
+import { IconChevronRight, IconChevronLeft } from "@tabler/icons-react"
+
+const useStyles = createStyles(() => ({
+  controls: {
+    ref: getStylesRef('controls'),
+    transition: 'opacity 150ms ease',
+    opacity: 0,
+  },
+
+  root: {
+    width: '100%',
+    height: '100vh',
+    '&:hover': {
+      [`& .${getStylesRef('controls')}`]: {
+        opacity: 1,
+      },
+    },
+
+    [`& .${getStylesRef('controls')}`]: {
+      button: {
+        backgroundColor: "transparent",
+        border: 'none',
+        boxShadow: 'none',
+        color: 'white',
+      }
+    },
+  },
+}));
 
 const BannerItem = ({ slide }: { slide: Slide }) => {
   return (
@@ -30,8 +59,10 @@ const BannerItem = ({ slide }: { slide: Slide }) => {
 };
 
 const CustomCarousel = ({ slides }: { slides: Slide[] }) => {
+  const { classes } = useStyles();
+
   return (
-    <Carousel withIndicators className="w-full h-screen" loop>
+    <Carousel withIndicators loop classNames={classes} previousControlIcon={<IconChevronLeft size={64}/>} nextControlIcon={<IconChevronRight size={64} />}>
       {slides.map((slide, index) => (
         <Carousel.Slide key={index} className="h-screen w-full">
           <BannerItem slide={slide} />
