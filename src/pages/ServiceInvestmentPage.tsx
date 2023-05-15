@@ -28,8 +28,8 @@ const ServiceInvestment = () => {
   }
 
   return (
-    <div className="flex flex-col gap-24">
-      <div className="container py-10">
+    <div className="flex flex-col gap-12 md:gap-24">
+      <div className="container py-4 md:py-10">
         <p className="m-0">{contents[0].description}</p>
       </div>
       <ServicesQuote
