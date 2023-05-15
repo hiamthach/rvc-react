@@ -4,8 +4,8 @@ import { Carousel } from '@mantine/carousel';
 
 const PartnerItem = ({ data }: { data: Partner }) => {
   return (
-    <div className="aspect-square w-fit h-fit p-4 bg-transparent">
-      <img src={data.logo} width={400} height={400} alt={data.name} className="object-contain object-center" />
+    <div className="aspect-square w-fit h-fit bg-white shadow-lg">
+      <img src={data.logo} width={400} height={400} alt={data.name} className="object-cover object-center" />
     </div>
   );
 };

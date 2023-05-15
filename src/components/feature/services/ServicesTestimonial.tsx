@@ -8,14 +8,16 @@ const ServicesTestimonial = ({ testimonials }: { testimonials: Testimonial[] }) 
   const dimension = useWindowDimensions();
 
   return (
-    <div className="py-12">
+    <div className="py-12 text-center">
       <h3 className="home-section-hero text-center text-primary uppercase font-bold">Cảm nhận của khách hàng</h3>
 
       <Carousel
+        maw={1440}
         slideGap={dimension?.width && dimension.width > 768 ? '50px' : '16px'}
         slideSize={dimension?.width && dimension.width > 768 ? '33.33333%' : '100%'}
         align={'center'}
         loop
+        className='mx-auto'
       >
         {testimonials.map((testimonial, index) => (
           <Carousel.Slide key={index}>

@@ -16,8 +16,10 @@ const HomeServices = ({ content }: { content: Content }) => {
       <div
         className="w-full h-fit py-16 relative"
         style={{
-          background: `url(${content.image}) no-repeat center center `,
+          background: `url(${content.image})`,
           backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
         }}
       >
         <div className="overlay"></div>

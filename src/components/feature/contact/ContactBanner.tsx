@@ -1,8 +1,14 @@
+import { useContext } from "react"
+
+import { MainLayoutContext } from "@/components/layout/MainLayout";
+
 const ContactBanner = () => {
+  const { information } = useContext(MainLayoutContext)
+
   return (
     <div className="h-screen w-full relative">
       <img
-        src={'https://picsum.photos/1920/1080'}
+        src={information?.contactImg ? information?.contactImg : 'https://picsum.photos/1920/1080'}
         alt="contact-banner"
         className="w-full h-screen absolute top-0 right-0 left-0"
       />

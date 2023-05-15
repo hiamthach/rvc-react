@@ -8,4 +8,5 @@ export interface Information {
   twitter?: string;
   instagram?: string;
   youtube?: string;
+  contactImg?: string;
 }

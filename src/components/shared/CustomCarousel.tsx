@@ -8,7 +8,9 @@ const BannerItem = ({ slide }: { slide: Slide }) => {
     <div
       className="relative w-full h-full flex items-center"
       style={{
-        background: `url(${slide.img}) no-repeat center center`,
+        background: `url(${slide.img})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
       }}
     >
       <div className="overlay"></div>
