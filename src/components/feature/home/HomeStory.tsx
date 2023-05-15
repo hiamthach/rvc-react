@@ -1,11 +1,13 @@
 import { Content } from '@/config/types/Content';
 
 import { Button } from '@mantine/core';
+import clsx from 'clsx';
 
 const HomeStory = ({ content }: { content: Content }) => {
   if (!content) {
     return null;
   }
+  console.log(content.link)
   return (
     <section className="container my-10">
       <div className="flex flex-col md:flex-row w-full gap-6 md:flex-nowrap flex-wrap items-stretch">
@@ -16,7 +18,7 @@ const HomeStory = ({ content }: { content: Content }) => {
 
           <p className="font-medium text-base mb-12">{content.description}</p>
 
-          <Button size="lg">Tìm hiểu thêm</Button>
+          <Button size="lg" component='a' href={content.link} target='_blank' className={clsx(!content.link && "pointer-events-none" )}>Tìm hiểu thêm</Button>
         </div>
         <div className="flex-1 relative">
           {content.image && (

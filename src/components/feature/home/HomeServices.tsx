@@ -1,5 +1,7 @@
 import { Content } from '@/config/types/Content';
 
+import clsx from 'clsx';
+
 import { Button } from '@mantine/core';
 
 const HomeServices = ({ content }: { content: Content }) => {
@@ -28,7 +30,7 @@ const HomeServices = ({ content }: { content: Content }) => {
           <p className="text-sm md:text-base mb-8 line-clamp-[10]">{content.description}</p>
 
           <div className="w-full text-center">
-            <Button size="lg">Tìm hiểu thêm</Button>
+            <Button size="lg" component='a' href={content.link} target='_blank' className={clsx(!content.link && "pointer-events-none" )}>Tìm hiểu thêm</Button>
           </div>
         </div>
       </div>

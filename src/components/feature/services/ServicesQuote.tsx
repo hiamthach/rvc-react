@@ -2,6 +2,8 @@ import { Button } from '@mantine/core';
 
 import { Link } from 'react-router-dom';
 
+import clsx from 'clsx';
+
 interface Props {
   title: string;
   quote: string;
@@ -25,7 +27,7 @@ const ServicesQuote = ({ title, quote, description, img, link }: Props) => {
           <img src={img} alt={title} width={560} height={400} className="object-contain object-center" />
 
           <Link to={link} className="block mt-4 text-center">
-            <Button size="lg">Tìm hiểu thêm</Button>
+            <Button size="lg" component='a' href={link} target='_blank' className={clsx(!link && "pointer-events-none" )} >Tìm hiểu thêm</Button>
           </Link>
         </div>
       </div>

@@ -2,6 +2,7 @@ import { Slide } from '@/config/types/Slide';
 
 import { Carousel } from '@mantine/carousel';
 import { Button } from '@mantine/core';
+import clsx from 'clsx';
 
 const BannerItem = ({ slide }: { slide: Slide }) => {
   return (
@@ -20,7 +21,7 @@ const BannerItem = ({ slide }: { slide: Slide }) => {
         <p className="w-full md:w-2/3 lg:w-1/2 text-sm md:text-base my-3 md:my-10 line-clamp-[10]">
           {slide.description}
         </p>
-        <Button size="lg" radius={10}>
+        <Button size="lg" radius={10}component='a' href={slide.link} target='_blank' className={clsx(!slide.link && "pointer-events-none" )}> 
           Tìm hiểu thêm
         </Button>
       </div>
