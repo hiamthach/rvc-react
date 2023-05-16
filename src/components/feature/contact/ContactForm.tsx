@@ -31,9 +31,6 @@ const ContactForm = ({ information }: { information: Information }) => {
   });
 
   const handleSubmit = (values: IFormValues) => {
-    console.log(values);
-    console.log(import.meta.env.EMAIL_SERVICE_ID);
-
     emailjs
       .send(
         import.meta.env.VITE_EMAIL_SERVICE_ID,
