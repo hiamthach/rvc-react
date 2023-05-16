@@ -25,8 +25,8 @@ const ServiceList = () => {
     );
   }
   return (
-    <div className="flex flex-col gap-12 md:gap-24">
-      <div className="container py-4 md:py-10">
+    <div className="">
+      <div className="container py-4 md:py-10 mb-12 md:mb-24">
         <p className="m-0">{contents[0].description}</p>
       </div>
       <ServicesQuote

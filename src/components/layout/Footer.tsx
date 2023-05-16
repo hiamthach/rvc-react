@@ -1,13 +1,15 @@
 import {
-  IconBrandFacebookFilled,
-  IconBrandInstagram,
-  IconBrandTwitterFilled,
-  IconBrandYoutube,
   IconMail,
   IconMapPin,
   IconPhoneCall,
   IconPointer,
 } from '@tabler/icons-react';
+
+import facebookIcon from "@/assets/icons/facebook.png"
+import instagramIcon from "@/assets/icons/instagram.png"
+import twitterIcon from "@/assets/icons/twitter.png"
+import youtubeIcon from "@/assets/icons/youtube.png"
+
 
 import { Link } from 'react-router-dom';
 
@@ -23,7 +25,10 @@ const Footer = ({ information }: { information: Information }) => {
   const { email, website, phone, address, facebook, instagram, twitter, youtube } = information;
 
   return (
-    <footer className="w-full bg-primary">
+    <footer className="w-full"
+    style={{
+      background: "linear-gradient(180deg, #c62127, #86181a)"
+    }}>
       <div className="container py-10">
         <div className="flex flex-col md:flex-row gap-4 flex-wrap md:flex-nowrap justify-between items-center md:items-stretch mb-3">
           <div className="flex flex-col items-center md:items-start gap-2 w-fit h-full">
@@ -52,12 +57,12 @@ const Footer = ({ information }: { information: Information }) => {
           <div className="flex flex-col items-center sm:items-end justify-between">
             <div className="flex flex-col sm:flex-row gap-4 md:gap-10 justify-end mb-2">
               <div className="flex flex-col items-center w-full sm:items-start gap-2 sm:w-fit">
-                <Link to={'/'} className="uppercase text-base text-white no-underline font-medium">
+                <Link to={'/'} className="uppercase text-base text-white no-underline font-extrabold">
                   Trang chủ
                 </Link>
               </div>
               <div className="flex flex-col items-center w-full sm:items-start gap-2 sm:w-fit">
-                <Link to={'/about-us'} className="uppercase text-base text-white no-underline font-medium">
+                <Link to={'/about-us'} className="uppercase text-base text-white no-underline font-extrabold">
                   Về chúng tôi
                 </Link>
 
@@ -72,7 +77,7 @@ const Footer = ({ information }: { information: Information }) => {
                 </Link>
               </div>
               <div className="flex flex-col items-center w-full sm:items-start gap-2 sm:w-fit">
-                <Link to={'/services/list'} className="uppercase text-base text-white no-underline font-medium">
+                <Link to={'/services/list'} className="uppercase text-base text-white no-underline font-extrabold">
                   Sản phẩm
                 </Link>
                 <Link to={'/services/list'} className="text-sm text-white no-underline">
@@ -86,12 +91,12 @@ const Footer = ({ information }: { information: Information }) => {
                 </Link>
               </div>
               <div className="flex flex-col items-center w-full sm:items-start gap-2 sm:w-fit">
-                <Link to={'/blog'} className="uppercase text-base text-white no-underline font-medium">
+                <Link to={'/blog'} className="uppercase text-base text-white no-underline font-extrabold">
                   Blog
                 </Link>
               </div>
               <div className="flex flex-col items-center w-full sm:items-start gap-2 sm:w-fit">
-                <Link to={'/contact'} className="uppercase text-base text-white no-underline font-medium">
+                <Link to={'/contact'} className="uppercase text-base text-white no-underline font-extrabold">
                   Liên hệ
                 </Link>
               </div>
@@ -106,7 +111,7 @@ const Footer = ({ information }: { information: Information }) => {
                   !facebook && 'pointer-events-none'
                 )}
               >
-                <IconBrandFacebookFilled className="w-[26px] h-[26px]" />
+                <img src={facebookIcon} alt="facebook-icon" className='w-8 h-8' />
               </Link>
               <Link
                 to={instagram ? instagram : '/'}
@@ -116,7 +121,7 @@ const Footer = ({ information }: { information: Information }) => {
                   !instagram && 'pointer-events-none'
                 )}
               >
-                <IconBrandInstagram className="w-7 h-7" />
+                <img src={instagramIcon} alt="instagram-icon" className='w-8 h-8' />
               </Link>
               <Link
                 to={twitter ? twitter : '/'}
@@ -126,7 +131,7 @@ const Footer = ({ information }: { information: Information }) => {
                   !twitter && 'pointer-events-none'
                 )}
               >
-                <IconBrandTwitterFilled className="w-6 h-6" />
+                <img src={twitterIcon} alt="twitter-icon" className='w-8 h-8' />
               </Link>
               <Link
                 to={instagram ? instagram : '/'}
@@ -136,7 +141,7 @@ const Footer = ({ information }: { information: Information }) => {
                   !youtube && 'pointer-events-none'
                 )}
               >
-                <IconBrandYoutube className="w-7 h-7" />
+                <img src={youtubeIcon} alt="youtube-icon" className='w-8 h-8' />
               </Link>
             </div>
           </div>

@@ -30,6 +30,8 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
             defaultProps: {
               radius: 10,
               fw: 'normal',
+              variant: 'gradient',
+              gradient:{ from: '#c62127', to: '#86181a', deg: 90 }
             },
           },
         },
