@@ -4,7 +4,8 @@ import { Carousel } from '@mantine/carousel';
 import { Button, createStyles, getStylesRef } from '@mantine/core';
 import clsx from 'clsx';
 
-import { IconChevronRight, IconChevronLeft } from "@tabler/icons-react"
+import leftIcon from '@/assets/icons/left.png';
+import rightIcon from '@/assets/icons/right.png';
 
 const useStyles = createStyles(() => ({
   controls: {
@@ -14,8 +15,8 @@ const useStyles = createStyles(() => ({
   },
 
   root: {
-    width: '100%',
-    height: '100vh',
+    'width': '100%',
+    'height': '100vh',
     '&:hover': {
       [`& .${getStylesRef('controls')}`]: {
         opacity: 1,
@@ -24,11 +25,11 @@ const useStyles = createStyles(() => ({
 
     [`& .${getStylesRef('controls')}`]: {
       button: {
-        backgroundColor: "transparent",
+        backgroundColor: 'transparent',
         border: 'none',
         boxShadow: 'none',
         color: 'white',
-      }
+      },
     },
   },
 }));
@@ -45,12 +46,21 @@ const BannerItem = ({ slide }: { slide: Slide }) => {
     >
       <div className="overlay"></div>
       <div className="text-white relative z-20 px-6 md:px-16">
-        <h4 className="text-xl md:text-3xl m-0 font-medium">{slide.subtitle}</h4>
+        <h4 className="text-xl md:text-3xl m-0 font-medium">
+          {slide.subtitle}
+        </h4>
         <h2 className="text-3xl md:text-5xl leading-1 m-0">{slide.title}</h2>
         <p className="w-full md:w-2/3 lg:w-1/2 text-sm md:text-base my-3 md:my-10 line-clamp-[10]">
           {slide.description}
         </p>
-        <Button size="lg" radius={10}component='a' href={slide.link} target='_blank' className={clsx(!slide.link && "pointer-events-none" )}> 
+        <Button
+          size="lg"
+          radius={10}
+          component="a"
+          href={slide.link}
+          target="_blank"
+          className={clsx(!slide.link && 'pointer-events-none')}
+        >
           Tìm hiểu thêm
         </Button>
       </div>
@@ -62,7 +72,17 @@ const CustomCarousel = ({ slides }: { slides: Slide[] }) => {
   const { classes } = useStyles();
 
   return (
-    <Carousel withIndicators loop classNames={classes} previousControlIcon={<IconChevronLeft size={64}/>} nextControlIcon={<IconChevronRight size={64} />}>
+    <Carousel
+      withIndicators
+      loop
+      classNames={classes}
+      previousControlIcon={
+        <img src={leftIcon} alt="left" className="h-12 w-auto" />
+      }
+      nextControlIcon={
+        <img src={rightIcon} alt="right" className="h-12 w-auto" />
+      }
+    >
       {slides.map((slide, index) => (
         <Carousel.Slide key={index} className="h-screen w-full">
           <BannerItem slide={slide} />

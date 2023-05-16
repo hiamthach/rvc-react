@@ -21,7 +21,8 @@ const BlogCard = ({ data }: { data: Blog }) => {
         <Image src={data.img} height={300} alt={data.title} />
       </Card.Section>
 
-      <Group position="apart" mt="md" mb="xs">
+      <Text weight={700} size="lg" mt={"md"} className='uppercase'>{data.title}</Text>
+      <Group position="apart" mb="xs">
         <Text weight={400}>{dayjs(data.date).format('DD/MM/YYYY HH:mm A')}</Text>
         <Text weight={400}>{data.author}</Text>
       </Group>
