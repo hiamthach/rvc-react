@@ -1,11 +1,9 @@
-import {
-  IconMail,
-  IconMapPin,
-  IconPhoneCall,
-  IconPointer,
-} from '@tabler/icons-react';
-
 import { Information } from '@/config/types/Information';
+
+import phoneIcon from '@/assets/icons/phone-black.svg';
+import mailIcon from '@/assets/icons/mail-black.svg';
+import locationIcon from '@/assets/icons/location-black.svg';
+import websiteIcon from '@/assets/icons/website-black.svg';
 
 import { Button, TextInput, Textarea } from '@mantine/core';
 import { useForm } from '@mantine/form';
@@ -78,19 +76,35 @@ const ContactForm = ({ information }: { information: Information }) => {
 
           <ul className="list-none pl-0">
             <li className="flex gap-3 items-center mb-1">
-              <IconPhoneCall className="w-4 h-4 md:w-6 md:h-6" />
+              <img
+                src={phoneIcon}
+                alt="phone"
+                className="w-4 h-4 md:w-6 md:h-6"
+              />
               <span className="text-sm md:text-xl">{information.phone}</span>
             </li>
             <li className="flex gap-3 items-center mb-1">
-              <IconMail className="w-4 h-4 md:w-6 md:h-6" />
+              <img
+                src={mailIcon}
+                alt="mail"
+                className="w-4 h-4 md:w-6 md:h-6"
+              />
               <span className="text-sm md:text-xl">{information.email}</span>
             </li>
             <li className="flex gap-3 items-center mb-1">
-              <IconMapPin className="w-4 h-4 md:w-6 md:h-6" />
+              <img
+                src={locationIcon}
+                alt="location"
+                className="w-4 h-4 md:w-6 md:h-6"
+              />
               <span className="text-sm md:text-xl">{information.address}</span>
             </li>
             <li className="flex gap-3 items-center mb-1">
-              <IconPointer className="w-4 h-4 md:w-6 md:h-6" />
+              <img
+                src={websiteIcon}
+                alt="website"
+                className="w-4 h-4 md:w-6 md:h-6"
+              />
               <span className="text-sm md:text-xl">{information.website}</span>
             </li>
           </ul>

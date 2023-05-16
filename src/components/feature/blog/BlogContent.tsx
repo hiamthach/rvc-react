@@ -25,6 +25,7 @@ const BlogContent = ({ blogs }: { blogs: Blog[] }) => {
           <Pagination
             value={page}
             onChange={(value) => {
+              window.scrollTo(0, 0);
               setPage(value);
             }}
             total={blogs.length / BLOG_LIMIT + 1}

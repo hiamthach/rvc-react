@@ -1,4 +1,4 @@
-import { IconSearch } from '@tabler/icons-react';
+import iconSearch from '@/assets/icons/search.svg';
 
 import { Input } from '@mantine/core';
 
@@ -9,7 +9,7 @@ const BlogSearch = () => {
 
   return (
     <Input
-      icon={<IconSearch />}
+      icon={<img src={iconSearch} alt="blog-search" className="w-5 h-5" />}
       placeholder="Search"
       radius={'lg'}
       onKeyDown={(e) => {

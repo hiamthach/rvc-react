@@ -9,9 +9,9 @@ const AboutUsContent = ({ contents }: { contents: Content[] }) => {
   return (
     <div className="mt-24">
       <AboutUsInformation content={contents[0]} />
-      <AboutUsVision content={contents[1]} />
-      <AboutUsValues content={contents[2]} />
-      <AboutUsStory content={contents[3]} />
+      <AboutUsVision contents={[contents[1], contents[2]]} />
+      <AboutUsValues content={contents[3]} />
+      <AboutUsStory content={contents[4]} />
     </div>
   );
 };
