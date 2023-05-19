@@ -15,9 +15,11 @@ const HomeStory = ({ content }: { content: Content }) => {
         <div className="flex-1 py-[100px]">
           <h3 className="home-section-hero">{content.title}</h3>
           <div className="h-[10px] w-32 bg-primary rounded-lg mb-4"></div>
-          <p className="bg-light w-fit text-primary font-medium my-6">
-            &quot;{content.subtitle}&quot;
-          </p>
+          {content.subtitle && (
+            <p className="bg-light w-fit text-primary font-medium my-6">
+              &quot;{content.subtitle}&quot;
+            </p>
+          )}
 
           <Paragraph content={content.description} classNames="mb-12" />
 

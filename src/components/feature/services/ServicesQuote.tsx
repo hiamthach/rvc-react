@@ -22,11 +22,13 @@ const ServicesQuote = ({ title, quote, description, img, link }: Props) => {
           <h3 className="home-section-title font-bold uppercase text-primary text-2xl md:text-4xl">
             {title}
           </h3>
-          <h4 className="text-xl md:text-3xl uppercase font-semibold mb-4 md:mb-10">
-            &quot;{quote}&quot;
-          </h4>
+          {quote && (
+            <h4 className="text-xl md:text-3xl uppercase font-semibold">
+              &quot;{quote}&quot;
+            </h4>
+          )}
 
-          <Paragraph content={description} />
+          <Paragraph content={description} classNames="mt-4 md:mt-10" />
         </div>
 
         <div className="w-fit max-w-full md:max-w-[50%]">

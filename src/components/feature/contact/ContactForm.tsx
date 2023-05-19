@@ -5,7 +5,7 @@ import mailIcon from '@/assets/icons/mail-black.svg';
 import locationIcon from '@/assets/icons/location-black.svg';
 import websiteIcon from '@/assets/icons/website-black.svg';
 
-import { Button, TextInput, Textarea } from '@mantine/core';
+import { Button, TextInput, Textarea, Checkbox } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { notifications } from '@mantine/notifications';
 
@@ -121,6 +121,7 @@ const ContactForm = ({ information }: { information: Information }) => {
                   placeholder="First name"
                   size="lg"
                   name="firstName"
+                  required
                   {...form.getInputProps('firstName')}
                 />
               </div>
@@ -129,6 +130,7 @@ const ContactForm = ({ information }: { information: Information }) => {
                   placeholder="Last name"
                   size="lg"
                   name="lastName"
+                  required
                   {...form.getInputProps('lastName')}
                 />
               </div>
@@ -139,6 +141,7 @@ const ContactForm = ({ information }: { information: Information }) => {
               name="email"
               type="email"
               withAsterisk
+              required
               {...form.getInputProps('email')}
             />
             <TextInput
@@ -146,6 +149,7 @@ const ContactForm = ({ information }: { information: Information }) => {
               size="lg"
               name="phone"
               type="tel"
+              required
               withAsterisk
               {...form.getInputProps('phone')}
             />
