@@ -12,7 +12,7 @@ import { Slide } from '@/config/types/Slide';
 import { getHomeContent } from '@/config/firebase/api/home';
 import { getSlides } from '@/config/firebase/api/slides';
 import { getPartners } from '@/config/firebase/api/partners';
-import { useDocumentTitle } from '@mantine/hooks';
+import useDocumentTitle from '@/hooks/useDocumentTitle';
 
 const HomePage = () => {
   useDocumentTitle('Trang chủ');
@@ -52,7 +52,11 @@ const HomePage = () => {
           <Loading />
         </div>
       ) : (
-        <HomeContent data={contents as Content[]} slides={slides as Slide[]} partners={partners as Partner[]} />
+        <HomeContent
+          data={contents as Content[]}
+          slides={slides as Slide[]}
+          partners={partners as Partner[]}
+        />
       )}
     </div>
   );

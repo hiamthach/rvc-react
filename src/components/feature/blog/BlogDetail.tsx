@@ -1,3 +1,4 @@
+import Paragraph from '@/components/shared/Paragraph';
 import { Blog } from '@/config/types/Blog';
 
 import { Anchor, Breadcrumbs } from '@mantine/core';
@@ -20,7 +21,7 @@ const BlogDetail = ({ data }: { data: Blog }) => {
 
       <h1 className="home-section-hero text-primary mb-8 mt-0">{data.title}</h1>
 
-      <p className="text-base">{data.description}</p>
+      <Paragraph content={data.description} classNames="m-0" />
     </div>
   );
 };

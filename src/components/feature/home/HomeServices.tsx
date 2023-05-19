@@ -3,6 +3,7 @@ import { Content } from '@/config/types/Content';
 import clsx from 'clsx';
 
 import { Button } from '@mantine/core';
+import Paragraph from '@/components/shared/Paragraph';
 
 const HomeServices = ({ content }: { content: Content }) => {
   if (!content) {
@@ -27,10 +28,20 @@ const HomeServices = ({ content }: { content: Content }) => {
         <div className="overlay"></div>
         <div className="container relative text-white z-20">
           <h4 className="home-section-hero mb-4">{content.title}</h4>
-          <p className="text-sm md:text-base mb-8 line-clamp-[10]">{content.description}</p>
-
+          <Paragraph
+            content={content.description}
+            classNames="mb-8 line-clamp-[10]"
+          />
           <div className="w-full text-center">
-            <Button size="lg" component='a' href={content.link} target='_blank' className={clsx(!content.link && "pointer-events-none" )}>Tìm hiểu thêm</Button>
+            <Button
+              size="lg"
+              component="a"
+              href={content.link}
+              target="_blank"
+              className={clsx(!content.link && 'pointer-events-none')}
+            >
+              Tìm hiểu thêm
+            </Button>
           </div>
         </div>
       </div>

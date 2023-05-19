@@ -4,6 +4,7 @@ import ServicesQuote from '@/components/feature/services/ServicesQuote';
 import { getServices } from '@/config/firebase/api/services';
 import Loading from '@/components/shared/Loading';
 import useDocumentTitle from '@/hooks/useDocumentTitle';
+import Paragraph from '@/components/shared/Paragraph';
 
 const ServiceList = () => {
   useDocumentTitle('Danh mục sản phẩm | Sản phẩm');
@@ -27,7 +28,7 @@ const ServiceList = () => {
   return (
     <div className="">
       <div className="container py-4 md:py-10 mb-12 md:mb-24">
-        <p className="m-0">{contents[0].description}</p>
+        <Paragraph content={contents[0].description} classNames="m-0" />
       </div>
       <ServicesQuote
         title={contents[1].title}
