@@ -5,7 +5,7 @@ import mailIcon from '@/assets/icons/mail-black.svg';
 import locationIcon from '@/assets/icons/location-black.svg';
 import websiteIcon from '@/assets/icons/website-black.svg';
 
-import { Button, TextInput, Textarea, Checkbox } from '@mantine/core';
+import { Button, TextInput, Textarea } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { notifications } from '@mantine/notifications';
 
@@ -37,6 +37,8 @@ const ContactForm = ({ information }: { information: Information }) => {
         import.meta.env.VITE_EMAIL_TEMPLATE_ID,
         {
           from_name: values.firstName + ' ' + values.lastName,
+          from_email: values.email,
+          from_phone: values.phone,
           message: values.feedback,
         },
         import.meta.env.VITE_EMAIL_PUBLIC_KEY
@@ -47,6 +49,7 @@ const ContactForm = ({ information }: { information: Information }) => {
           title: 'Thông tin của bạn đã được gửi đi',
           message: 'Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất',
         });
+        form.reset();
       })
       .catch(() => {
         notifications.show({
