@@ -6,6 +6,7 @@ import clsx from 'clsx';
 
 import leftIcon from '@/assets/icons/left.png';
 import rightIcon from '@/assets/icons/right.png';
+import Paragraph from './Paragraph';
 
 const useStyles = createStyles(() => ({
   controls: {
@@ -50,9 +51,10 @@ const BannerItem = ({ slide }: { slide: Slide }) => {
           {slide.subtitle}
         </h4>
         <h2 className="text-3xl md:text-5xl leading-1 m-0">{slide.title}</h2>
-        <p className="w-full md:w-2/3 lg:w-1/2 text-sm md:text-base my-3 md:my-10 line-clamp-[10]">
-          {slide.description}
-        </p>
+        <Paragraph
+          content={slide.description}
+          classNames="w-full md:w-2/3 lg:w-1/2 my-3 md:my-10 line-clamp-[10]"
+        />
         <Button
           size="lg"
           radius={10}

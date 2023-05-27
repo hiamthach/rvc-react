@@ -37,6 +37,8 @@ const ContactForm = ({ information }: { information: Information }) => {
         import.meta.env.VITE_EMAIL_TEMPLATE_ID,
         {
           from_name: values.firstName + ' ' + values.lastName,
+          from_email: values.email,
+          from_phone: values.phone,
           message: values.feedback,
         },
         import.meta.env.VITE_EMAIL_PUBLIC_KEY
@@ -47,6 +49,7 @@ const ContactForm = ({ information }: { information: Information }) => {
           title: 'Thông tin của bạn đã được gửi đi',
           message: 'Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất',
         });
+        form.reset();
       })
       .catch(() => {
         notifications.show({
@@ -121,6 +124,7 @@ const ContactForm = ({ information }: { information: Information }) => {
                   placeholder="First name"
                   size="lg"
                   name="firstName"
+                  required
                   {...form.getInputProps('firstName')}
                 />
               </div>
@@ -129,6 +133,7 @@ const ContactForm = ({ information }: { information: Information }) => {
                   placeholder="Last name"
                   size="lg"
                   name="lastName"
+                  required
                   {...form.getInputProps('lastName')}
                 />
               </div>
@@ -139,6 +144,7 @@ const ContactForm = ({ information }: { information: Information }) => {
               name="email"
               type="email"
               withAsterisk
+              required
               {...form.getInputProps('email')}
             />
             <TextInput
@@ -146,6 +152,7 @@ const ContactForm = ({ information }: { information: Information }) => {
               size="lg"
               name="phone"
               type="tel"
+              required
               withAsterisk
               {...form.getInputProps('phone')}
             />

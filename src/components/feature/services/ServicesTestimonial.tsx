@@ -3,6 +3,7 @@ import { Testimonial } from '@/config/types/Testimonial';
 import { Carousel } from '@mantine/carousel';
 
 import useWindowDimensions from '@/hooks/useWindowDimensions';
+import Paragraph from '@/components/shared/Paragraph';
 
 const ServicesTestimonial = ({
   testimonials,
@@ -16,6 +17,9 @@ const ServicesTestimonial = ({
       <h3 className="home-section-hero text-center text-primary uppercase font-bold">
         Cảm nhận của khách hàng
       </h3>
+      <p className="text-sm md:text-base mb-10">
+        Thành công của khách hàng và động lực để chúng tôi tốt hơn mỗi ngày
+      </p>
 
       <Carousel
         maw={1440}
@@ -39,7 +43,10 @@ const ServicesTestimonial = ({
               />
 
               <h6 className="text-lg m-0 my-3">{testimonial.name}</h6>
-              <p className="m-0 line-clamp-6">{testimonial.testimonial}</p>
+              <Paragraph
+                content={testimonial.testimonial}
+                classNames="m-0 line-clamp-6"
+              />
             </div>
           </Carousel.Slide>
         ))}

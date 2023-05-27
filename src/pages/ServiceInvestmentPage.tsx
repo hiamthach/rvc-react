@@ -5,6 +5,7 @@ import ServicesInformation from '@/components/feature/services/ServicesInformati
 import { getServices } from '@/config/firebase/api/services';
 import Loading from '@/components/shared/Loading';
 import useDocumentTitle from '@/hooks/useDocumentTitle';
+import Paragraph from '@/components/shared/Paragraph';
 
 const ServiceInvestment = () => {
   useDocumentTitle('Ủy thác đầu tư | Sản phẩm');
@@ -30,7 +31,7 @@ const ServiceInvestment = () => {
   return (
     <div className="flex flex-col gap-12 md:gap-24">
       <div className="container py-4 md:py-10">
-        <p className="m-0">{contents[0].description}</p>
+        <Paragraph content={contents[0].description} classNames="m-0" />
       </div>
       <ServicesQuote
         title={contents[1].title}

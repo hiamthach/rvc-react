@@ -43,7 +43,7 @@ const ServiceLayout = ({ children }: { children: ReactNode }) => {
   return (
     <>
       <CustomCarousel slides={slides ? slides : []} />
-      <div className=" py-20 w-full">{children}</div>
+      <div className="py-20 w-full">{children}</div>
       <ServicesTestimonial testimonials={testimonials ? testimonials : []} />
     </>
   );

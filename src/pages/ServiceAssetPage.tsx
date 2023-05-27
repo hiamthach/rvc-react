@@ -6,6 +6,7 @@ import { getServices } from '@/config/firebase/api/services';
 import Loading from '@/components/shared/Loading';
 
 import useDocumentTitle from '@/hooks/useDocumentTitle';
+import Paragraph from '@/components/shared/Paragraph';
 
 const ServiceAsset = () => {
   useDocumentTitle('Quản lý tài sản | Sản phẩm');
@@ -31,7 +32,7 @@ const ServiceAsset = () => {
   return (
     <div className="flex gap-12 md:gap-24 flex-col">
       <div className="container py-4 md:py-10">
-        <p className="m-0">{contents[0].description}</p>
+        <Paragraph content={contents[0].description} classNames="m-0" />
       </div>
       <ServicesQuote
         title={contents[1].title}

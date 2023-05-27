@@ -1,3 +1,4 @@
+import Paragraph from '@/components/shared/Paragraph';
 import { Content } from '@/config/types/Content';
 
 const AboutUsVision = ({ contents }: { contents: Content[] }) => {
@@ -8,7 +9,7 @@ const AboutUsVision = ({ contents }: { contents: Content[] }) => {
           {contents[0].title}
         </h3>
 
-        <p className="text-sm md:text-base mb-0">{contents[0].description}</p>
+        <Paragraph content={contents[0].description} />
       </div>
 
       <div className="container mt-6">
@@ -16,7 +17,7 @@ const AboutUsVision = ({ contents }: { contents: Content[] }) => {
           {contents[1].title}
         </h3>
 
-        <p className="text-sm md:text-base mb-0">{contents[1].description}</p>
+        <Paragraph content={contents[1].description} />
       </div>
     </section>
   );
